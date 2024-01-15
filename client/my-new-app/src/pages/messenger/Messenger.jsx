@@ -9,7 +9,7 @@ import axios from "axios"
 import { io } from "socket.io-client";
 
 
-export default function Messenger() {
+ export default function Messenger() {
   
   const [conversations,setConversations]=useState([])
   const [currentChat, setCurrentChat] = useState();
@@ -17,6 +17,8 @@ export default function Messenger() {
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
   
   const socket = useRef(io("ws://localhost:8900"))
   
@@ -63,7 +65,9 @@ export default function Messenger() {
       }
     };
     getConversations();
-  }, [user._id]);
+  }, [user._id]); 
+ 
+  
   
   useEffect(() => {
     const getMessages = async () => {
@@ -118,14 +122,18 @@ export default function Messenger() {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+ 
+  
+
   return (
     <>
     <Topbar/>
     <div className="messenger">
-
-     <div className="chatMenu">
+      
+   
+    <div className="chatMenu">
                <div className="chatMenuWrapper">
-                 <input type="text" placeholder="Search for friends" className="chatMenuInput" />
+                 <input type="text" placeholder="🔍 Search for friends" className="chatMenuInput" />
                
                  
               
@@ -140,6 +148,8 @@ export default function Messenger() {
                 
                </div>
        </div>  
+     
+
       <div className="chatBox">
                  <div className="chatBoxWrapper">
 
@@ -180,4 +190,6 @@ export default function Messenger() {
   </>
   
   );
-}
+}   
+
+

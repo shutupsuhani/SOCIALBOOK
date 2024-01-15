@@ -8,7 +8,10 @@ import {AuthContext} from "../../context/AuthContext";
 export default function Topbar() {
  
   const PF = process.env.REACT_APP_PUBLIC_FOLDER
-  const {user} = useContext(AuthContext)
+  const {user} = useContext(AuthContext);
+  
+
+ 
 
   if (!user) {
     // You can return some loading state or an empty div here, depending on your requirements
@@ -34,10 +37,6 @@ export default function Topbar() {
             </div>
         </div>
         <div className="topbarRight"></div>
-        <div className="topbarlinks">
-          <span className="topbarLink">Homepage</span>
-          <span className="topbarLink">Timeline</span>
-        </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
            <i><FontAwesomeIcon icon="fa-solid fa-user" className="user"/></i>
@@ -66,4 +65,5 @@ export default function Topbar() {
       </div>
     </div>
   )
-}
+} 
+

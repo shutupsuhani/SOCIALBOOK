@@ -1,11 +1,12 @@
+// conversation.js
+
 const mongoose = require("mongoose");
 
-const ConversationSchema = new mongoose.Schema(
-  {
-    members: {
-      type: Array,
-    },
+const ConversationSchema = new mongoose.Schema({
+
+    members: {type: Array },
   },
+  
   { timestamps: true }
 );
 

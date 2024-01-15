@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "api/**/*", "use": "@vercel/node" },
+      { "src": "client/package.json", "use": "@vercel/static-build", "config": { "distDir": "client/my-new-app/build" } },
+      { "src": "socket/**/*", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "api/$1" },
+      { "src": "/socket/(.*)", "dest": "socket/$1" },
+      { "src": "/(.*)", "dest": "client/my-new-app/build/$1" }
+    ]
+  }
+  

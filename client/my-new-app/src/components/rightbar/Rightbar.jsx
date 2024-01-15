@@ -79,24 +79,21 @@ export default function Rightbar({users}) {
 
       </>
     );
-  }
+  }  
 
-  const ProfileRightbar = ()=> {
-    return(
-
-      
+  const ProfileRightbar = () => {
+    return (
       <>
-     
-      {users.usename!==currentUser.username && (
-        <button className="rightbarFollowButton" onClick={handleClick}>
-          {followed ? "unfollow" : "follow"}
-          {followed ? <RemoveIcon /> : <AddIcon />}
-        </button>
-      )}
-      <div className="rightbarDiv">
-      <h4 className="rightbarTitle">User information</h4>
-       <div className="rightbarInfo">
-        <div className="rightbarInfoItem">
+        {users.username !== currentUser.username && (
+          <button className="rightbarFollowButton" onClick={handleClick}>
+            {followed ? "unfollow" : "follow"}
+            {followed ? <RemoveIcon /> : <AddIcon />}
+          </button>
+        )}
+        <div className="rightbarDiv">
+          <h4 className="rightbarTitle">User information</h4>
+          <div className="rightbarInfo">
+          <div className="rightbarInfoItem">
           <span className="rightbarInfoKey">City:</span>
           <span className="rightbarInfoValue">{users.city}</span>
         </div>
@@ -111,30 +108,25 @@ export default function Rightbar({users}) {
           <span className="rightbarInfoValue">{users.relationship ===1 ? "Single" : users.relationship ===1 ? "Married " :"-" }</span>
         </div>
       </div>
-      <h4 className="rightbarTitle">User friends</h4>
-      
-      <div className="rightbarFollowings">
-        {friends.map(friends =>(
-        <Link to={"/profile/" + friends.username} style={{textDecoration:"none"}}>
-           <div className="rightbarFollowing">
-           <img className="rightbarFollowingImg" src={friends.profilePicture ? PF+friends.profilePicture :PF+"/person/noavataar.png"} alt="" />
-           <span className="rightbarFollowingName">{friends.username}</span>
-              </div>
-         </Link>
-
-
-        ))}
+          </div>
+          <h4 className="rightbarTitle">User friends</h4>
+          <div className="rightbarFollowings">
+            {friends.map((friend) => (
+              <Link to={"/profile/" + friend.username} style={{ textDecoration: "none" }}>
+                <div className="rightbarFollowing">
+                  <div className="friends">
+                  <img className="rightbarFollowingImg" src={friend.profilePicture ? PF + friend.profilePicture : PF + "/person/noavataar.png"} alt="" />
+                  <span className="rightbarFollowingName">{friend.username}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         
-
-      
-      
-      </div>
-     </div> 
-
       </>
-
     );
   }
+ 
 
   return (
     <div className="rightbar">

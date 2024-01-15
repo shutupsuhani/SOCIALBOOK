@@ -8,6 +8,7 @@ const bcrypt = require("bcrypt");
 // Register a new user
 
 router.post("/register", async (req, res) => {
+
   try {
     // Validate request body
     if (!req.body.username || !req.body.email || !req.body.password) {
@@ -26,17 +27,14 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
     // Create new user
-    const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
-      password: hashedPassword,
-    });
+    const newUser = new User({ username: req.body.username, email: req.body.email, password: hashedPassword, });
 
     // Save user and return response
     const user = await newUser.save();
     res.status(200).json({ userId: user._id, username: user.username });
   } catch (err) {
     console.error(err); // Log the error
+   
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });

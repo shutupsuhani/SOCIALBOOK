@@ -7,14 +7,19 @@
 
 .chatMenu{
     flex: 3.5;
+     
    
 }
 
 .chatMenuInput {
+    margin-top: 30px;
     width: 90%;
     padding: 10px 0;
-    border-bottom: 2px solid rgb(128, 128, 128);
+     background-color: #cfa9ba;
     border: none;
+    border-radius: 20px;
+    color:black;
+
 }
 
 
@@ -53,7 +58,7 @@
     height: 40px;
     border-radius: 5px;
     border: none;
-    background-color: teal;
+    background: linear-gradient(to right,  #d62976, #962fbf, #4f5bd5); 
     color: aliceblue;
 }
 
