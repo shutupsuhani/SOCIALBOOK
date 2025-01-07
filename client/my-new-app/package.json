@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^7.1.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.14.18",
+    "@mui/material": "^5.15.21",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,6 +22,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.5",
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.7.2",
     "source-map-loader": "^4.0.1",
@@ -31,7 +32,7 @@
     "webpack": "^5.89.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -54,12 +55,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8800/api",
-  "devDependencies": {
-    "autoprefixer": "^9.8.8",
-    "postcss": "^8.4.33",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-loader": "^7.3.4",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
-  }
+  "proxy": "http://localhost:8800/api"
 }

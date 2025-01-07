@@ -134,5 +134,17 @@ router.put("/:id/unfollow", async (req, res) => {
       res.status(403).json("you cant unfollow yourself");
     }
   });
+//search users
+  router.get('/search', async (req, res) => {
+    const query = req.query.q;
+    try {
+        const users = await User.find({
+            username: { $regex: query, $options: 'i' } // Case insensitive search
+        }).select('username profilePicture'); // Only return the username and profilePicture fields
+        res.json(users);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});  
 
 module.exports=router

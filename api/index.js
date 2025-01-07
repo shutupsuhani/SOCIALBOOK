@@ -31,6 +31,24 @@ db.once('open', function() {
 
 app.use(cors());
 
+app.use(cors({
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "http://localhost:3000"
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS")); 
+    }
+  },
+  credentials: true, 
+  methods: ["GET", "POST", "PUT", "DELETE"], 
+  allowedHeaders: ["Content-Type", "Authorization"], 
+}));
+
+
+//app.use("/images",express.static(path.join(__dirname,"/public/images")));
 
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
@@ -67,9 +85,12 @@ app.use("/api/conversations",conversationRoute);
 app.use("/api/messages",messageRoute);
 
 
-app.listen(8800, () => {
-    console.log("Backend Server is running!");
+
+app.listen(process.env.PORT, () => {
+    console.log('connected to Server on port 8800');
 }); 
+
+
 
 
 

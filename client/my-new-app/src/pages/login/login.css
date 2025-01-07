@@ -1,25 +1,64 @@
 .login{
     width: 100vw;
     height: 100vh;
-    background-color: #f0f2f5;
+    background-color:rgb(244, 244, 244);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scrollbar-width:thin;
+    overflow-x: hidden;
 }
 
-.loginWrapper {
-    height: 70%;
-    width: 70%;
-    
+
+.loginContainer {
     display: flex;
 }
 
 .loginLeft,.loginRight {
     flex: 1;
+}
+
+.loginLeft {
+    height:50%;
+    width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    
+   
+   
+}
 
+.loginWrapper {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+.loginRight {
+   
+    display: flex;
+    align-items: center;
+   justify-content: center;
+}
+
+
+.loginRight label{
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
 }
 
 .loginLogo{
@@ -34,25 +73,35 @@
 }
 
 .loginBox{
-   height: 300px;
+   height: auto;
+   width: 70%;
    padding: 20px;
    background-color: #fff;
    border-radius: 10px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
 -webkit-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
 }
 
+
+
 .loginInput {
-    height: 50px;
-    border-radius: 10px;
-    border: 1px solid grey;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid teal;
     font-size: 18px;
     padding-left: 20px;
+    margin-top: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.loginInput::placeholder {
+    color: teal;
 }
 
 .loginInput:focus {
@@ -60,76 +109,192 @@
 }
 
 .loginButton {
-   height: 50px;
-   width: 200px;
+   height: 40px;
+   width: 350px;
    margin: auto;
    border-radius: 5px;
    border: none;
    background-color: teal;
    color: white;
    font-weight: 500;
+   margin-top: 20px;
+   font-size: 18px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.loginButton:hover {
-    border: 2px solid black;
-   
 
-}
-.loginButton:disabled{
-    cursor: not-allowed;
-}
-
-.loginRegisterButton{
-    
-    border-radius: 5px;
-    background-color: teal;
-    color: white;
-    cursor: pointer;
-} 
 
 .loginForgot {
     text-align: center;
     color: green;
+    margin-top: 20px;
 }
 
-.orText {
-    margin: auto;
-    font-weight: bold;
-}
-
-.googleButton {
-    width: 70%;
-    height: 55px;
-    margin: auto;
-    background-color: white;
-    padding: 15px;
-    border-radius: 20px;
-    border:1px grey solid;
-    margin-bottom:40px ;
-    
-    
-   box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
-   -webkit-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
-   -moz-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
-   
-    
-   
-   
-}
-
-.googleButtonText {
-    padding:15px;
-    font-size:15px;
-    font-weight:bold;
-    margin-bottom: 30px;
+.filelabel {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
     
 }
 
-.googleImg{
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-bottom: 0px;
+.profileCam {
+    height: 50px;
+    width: 50px;
     
 }
+
+.text {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+
+}
+
+
+@media screen and (max-width:1000px ) and (min-width:412px) {
+      .loginContainer {
+        display: flex;
+        flex-direction: column;
+         top: 5%;
+      }
+
+      .login {
+        overflow-x: hidden;
+        height: 100%;
+        width: 100%;
+      }
+
+      
+  }
+
+  @media screen and (max-width:400px ) and (min-width:290px) {
+    .login {
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .loginContainer {
+      display: flex;
+      flex-direction: column;
+       top: 5%;
+    }
+
+    .loginDesc {
+        font-size:18px;
+    }
+
+    .loginBox{
+        height: auto;
+        width: 280px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        margin-bottom: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
+     -webkit-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
+     -moz-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
+     }
+
+     .loginButton {
+        height: 30px;
+        width: 240px;
+        margin: auto;
+        border-radius: 5px;
+        border: none;
+        background-color: teal;
+        color: white;
+        font-weight: 500;
+        margin-top: 20px;
+        font-size: 18px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+
+     .dyntext {
+        font-size: 16px;
+     }
+
+     .loginLogo {
+        font-size: 32px;
+     }
+    
+    
+}  
+
+@media screen and (max-width:288px )  {
+    .login {
+        height: 100%;
+        width: 100%;
+        overflow-x:hidden;
+    }
+    .loginContainer {
+      display: flex;
+      flex-direction: column;
+       top: 5%;
+    }
+
+    .loginDesc {
+        font-size:18px;
+    }
+
+    .loginBox{
+        height: auto;
+        width: 200px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+       
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
+     -webkit-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
+     -moz-box-shadow: 10px 10px 5px 0px rgba(161,141,141,0.75);
+     margin-bottom: 5px;
+     }
+
+     .loginButton {
+        height: 30px;
+        width: 195px;
+        margin: auto;
+        border-radius: 5px;
+        border: none;
+        background-color: teal;
+        color: white;
+        font-weight: 500;
+        margin-top: 20px;
+        font-size: 18px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+
+     .dyntext {
+        font-size: 16px;
+     }
+
+     .loginLogo {
+        font-size: 32px;
+     }
+
+    }    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

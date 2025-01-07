@@ -4,12 +4,12 @@ import Conversation from "../../components/conversation/Conversation"
 import Message from "../../components/message/Message"
 import ChatOnline from "../../components/chatOnline/ChatOnline"
 import { useContext, useEffect, useState ,useRef} from "react"
-import { AuthContext } from "../../context/AuthContext"
+import { AuthContext } from "../../components/context/AuthContext"
 import axios from "axios"
 import { io } from "socket.io-client";
 
 
- export default function Messenger() {
+export default function Messenger() {
   
   const [conversations,setConversations]=useState([])
   const [currentChat, setCurrentChat] = useState();
@@ -17,8 +17,6 @@ import { io } from "socket.io-client";
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
-  const [searchInput, setSearchInput] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
   
   const socket = useRef(io("ws://localhost:8900"))
   
@@ -55,6 +53,10 @@ import { io } from "socket.io-client";
   }, [arrivalMessage,currentChat]);
 
 
+
+
+
+
   useEffect(()=>{
     const getConversations = async () => {
       try {
@@ -65,9 +67,7 @@ import { io } from "socket.io-client";
       }
     };
     getConversations();
-  }, [user._id]); 
- 
-  
+  }, [user._id]);
   
   useEffect(() => {
     const getMessages = async () => {
@@ -122,18 +122,14 @@ import { io } from "socket.io-client";
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
- 
-  
-
   return (
     <>
     <Topbar/>
     <div className="messenger">
-      
-   
-    <div className="chatMenu">
+
+     <div className="chatMenu">
                <div className="chatMenuWrapper">
-                 <input type="text" placeholder="🔍 Search for friends" className="chatMenuInput" />
+                 <input type="text" placeholder="Search for friends" className="chatMenuInput" />
                
                  
               
@@ -148,8 +144,6 @@ import { io } from "socket.io-client";
                 
                </div>
        </div>  
-     
-
       <div className="chatBox">
                  <div className="chatBoxWrapper">
 
@@ -190,6 +184,4 @@ import { io } from "socket.io-client";
   </>
   
   );
-}   
-
-
+}

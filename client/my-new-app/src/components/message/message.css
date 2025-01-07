@@ -18,7 +18,7 @@
 .messageText{
     padding: 10px;
     border-radius: 20px;
-    background: linear-gradient(to right,  #d62976, #962fbf, #4f5bd5); 
+    background-color: teal;
     color: white;
     max-width: 300px;
 

@@ -49,3 +49,25 @@
 .profileRightBottom {
   display: flex;
 }
+
+
+.rightbarFollowButton {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: none;
+  background: linear-gradient(to right, #d62976, #962fbf, #4f5bd5);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+ 
+  transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+.rightbarFollowButton:hover {
+  border: 1px white solid; /* Adds a solid white border on hover */
+}

@@ -4,7 +4,7 @@ import "./feed.css"
 import Share from "../share/Share"
 import Post from "../post/Post.jsx"
 import axios from "axios" 
-import {AuthContext} from "../../context/AuthContext"
+import {AuthContext} from "../../components/context/AuthContext"
 
 export default function Feed({username}) {
   const [post,setPost] = useState([]);
