@@ -137,13 +137,19 @@ router.put("/:id/unfollow", async (req, res) => {
 //search users
   router.get('/search', async (req, res) => {
     const query = req.query.q;
+    if (!query || query.length < 3) {
+        return res.status(400).json({ message: "Query must be at least 3 characters long" });
+    }
+    
     try {
         const users = await User.find({
             username: { $regex: query, $options: 'i' } // Case insensitive search
-        }).select('username profilePicture'); // Only return the username and profilePicture fields
+        }).select('username profilePicture'); // Only return required fields
+
         res.json(users);
+        
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: "Internal Server Error" });
     }
 });  
 

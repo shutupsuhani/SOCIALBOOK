@@ -2,8 +2,9 @@
 import React from "react";
 import "./share.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Cancel } from "@material-ui/icons";
 import { useContext, useRef, useState } from "react";
-import {AuthContext} from "../../components/context/AuthContext"
+import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 
 export default function Share() {

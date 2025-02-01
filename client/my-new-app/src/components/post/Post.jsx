@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
-import {AuthContext} from "../../components/context/AuthContext"
+import { AuthContext } from "../context/AuthContext";
+
 
 export default function Post({ post }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -41,7 +42,6 @@ export default function Post({ post }) {
     setLike(isLiked ? like - 1 : like + 1);
     setisLiked(!isLiked);
   };
-  console.log(users.username)
 
 
   return (

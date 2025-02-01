@@ -6,7 +6,7 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import {useState,useEffect,useContext} from "react";
 import axios from "axios"
 import {useParams} from "react-router"; 
-import {AuthContext} from "../../components/context/AuthContext"
+import { AuthContext } from "../../components/context/AuthContext";
 import {Link} from "react-router-dom"
 export default function Profile() {
 
@@ -81,11 +81,6 @@ export default function Profile() {
            
           </button>
            )}
-
-           {users.username !== currentUser.username && (
-               <Link to='/message/users.username'><button className="rightbarFollowButton">Message</button></Link>
-           )}
-
          </div>
            
         

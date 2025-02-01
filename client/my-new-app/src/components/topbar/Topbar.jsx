@@ -15,7 +15,7 @@ export default function Topbar() {
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (query.length > 2) {
-        const response = await axios.get(`/users/search?q=${query}`);
+        const response = await axios.get(`http://localhost:8800/api/users/search?q=${query}`);
         setSuggestions(response.data);
       } else {
         setSuggestions([]);
@@ -31,7 +31,7 @@ export default function Topbar() {
 
   const handleLogout = async () => {
     try {
-      
+      // Make a GET request to logout endpoint on the server
       await axios.get('/logout');
       
       // Clear the token from cookies or local storage
