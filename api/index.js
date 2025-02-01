@@ -26,22 +26,16 @@ mongoose.connection.on("connected", () => console.log("MongoDB Connected"));
 mongoose.connection.on("error", (err) => console.error("MongoDB Error:", err));
 
 // Middleware
-app.use(cors());
-
-
+app.use(cors({
+  origin: "https://socialbook-app.vercel.app",  // Ensure this is the correct frontend URL
+  credentials: true  // If you're using cookies or sessions, this should be set to true
+}));
 
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
 // File Upload (If needed)
-
-app.use(cors({
-  origin: "https://socialbook-app.vercel.app",
-  credentials: true
-}));
-
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
@@ -69,7 +63,6 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 
 // Export app for Vercel
-
 app.get("/", (req, res) => {
   res.send("Welcome to the Social Media App API");
 });
