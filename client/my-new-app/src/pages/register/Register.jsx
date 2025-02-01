@@ -32,7 +32,7 @@ export default function Register() {
       formData.append("avatar", avatar); 
 
       try {
-        await axios.post("/auth/register", formData, {
+        await axios.post("https://socialbook-server-xi.vercel.app/", formData, {
           headers: {
             "Content-Type": "multipart/form-data", // Set content type to multipart/form-data for file upload
           },
