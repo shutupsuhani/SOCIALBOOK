@@ -59,4 +59,9 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 
 // Export app for Vercel
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the Social Media App API");
+});
+
 module.exports = app;
