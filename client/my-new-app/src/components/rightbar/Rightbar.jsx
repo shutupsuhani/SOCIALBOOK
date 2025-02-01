@@ -23,7 +23,7 @@ export default function Rightbar({ users }) {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const friendList = await axios.get("/users/friends/" + users._id);
+        const friendList = await axios.get("https://socialbook-server-xi.vercel.app/api/users/friends/" + users._id);
         setFriends(friendList.data);
       } catch (err) {
         console.log(err);

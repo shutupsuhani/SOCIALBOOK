@@ -24,7 +24,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`/users?username=${username}`);
+        const res = await axios.get(`https://socialbook-server-xi.vercel.app/api/users?username=${username}`);
         console.log("Response Data:", res.data); // Log the response data
         console.log("Full Response Object:", res); // Log the entire response object
         setUser(res.data);

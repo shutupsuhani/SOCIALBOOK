@@ -50,22 +50,22 @@ export default function Sidebar() {
       <hr className="sidebarHr"/>
       <ul className="sidebarFriendList">
         <li className="sidebarFriend">
-          <img className="sidebarfriendImg" src="/assets/person/second.jpg" alt=""/>
+          <img className="sidebarfriendImg" src="./assets/person/second.jpg" alt=""/>
           <span class="sidebarFriendName">Lisa</span>
         </li>
 
         <li className="sidebarFriend">
-          <img className="sidebarfriendImg" src="/assets/person/first.jpg" alt=""/>
+          <img className="sidebarfriendImg" src="./assets/person/first.jpg" alt=""/>
           <span class="sidebarFriendName">Sneha</span>
         </li>
 
         <li className="sidebarFriend">
-          <img className="sidebarfriendImg" src="/assets/person/third.jpg" alt=""/>
+          <img className="sidebarfriendImg" src="./assets/person/third.jpg" alt=""/>
           <span class="sidebarFriendName">Megha</span>
         </li>
         
         <li className="sidebarFriend">
-          <img className="sidebarfriendImg" src="/assets/person/fifth.jpg" alt=""/>
+          <img className="sidebarfriendImg" src="./assets/person/fifth.jpg" alt=""/>
           <span class="sidebarFriendName">Priya</span>
         </li>
       

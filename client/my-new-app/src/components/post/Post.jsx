@@ -23,7 +23,7 @@ export default function Post({ post }) {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`users?userId=${post.userId}`);
+        const res = await axios.get(`https://socialbook-server-xi.vercel.app/api/users?userId=${post.userId}`);
         console.log("Response Data:", res.data); // Log the response data
         console.log("Full Response Object:", res); // Log the entire response object
         setUser(res.data);
