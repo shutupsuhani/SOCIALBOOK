@@ -27,11 +27,21 @@ mongoose.connection.on("error", (err) => console.error("MongoDB Error:", err));
 
 // Middleware
 app.use(cors());
+
+
+
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
 // File Upload (If needed)
+
+app.use(cors({
+  origin: "https://socialbook-app.vercel.app/",
+  credentials: true
+}));
+
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
