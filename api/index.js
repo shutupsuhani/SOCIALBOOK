@@ -37,7 +37,7 @@ app.use(morgan("common"));
 // File Upload (If needed)
 
 app.use(cors({
-  origin: "https://socialbook-app.vercel.app/",
+  origin: "https://socialbook-app.vercel.app",
   credentials: true
 }));
 
