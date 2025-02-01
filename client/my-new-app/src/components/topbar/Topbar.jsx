@@ -15,7 +15,7 @@ export default function Topbar() {
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (query.length > 2) {
-        const response = await axios.get(`http://localhost:8800/api/users/search?q=${query}`);
+        const response = await axios.get(`https://socialbook-server-xi.vercel.app/api/users/search?q=${query}`);
         setSuggestions(response.data);
       } else {
         setSuggestions([]);
